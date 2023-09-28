@@ -26,6 +26,36 @@
                     <span>Nombre</span>
                   </div>
                 </th>
+                <th scope="col">
+                  <div class="d-flex" style="cursor: pointer; gap: 4px">
+                    <span>Apellido</span>
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="d-flex" style="cursor: pointer; gap: 4px">
+                    <span>Cédula</span>
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="d-flex" style="cursor: pointer; gap: 4px">
+                    <span>Usuario</span>
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="d-flex" style="cursor: pointer; gap: 4px">
+                    <span>Correo</span>
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="d-flex" style="cursor: pointer; gap: 4px">
+                    <span>Celular</span>
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="d-flex" style="cursor: pointer; gap: 4px">
+                    <span>Año Lectivo</span>
+                  </div>
+                </th>
                 <th scope="col"><div class="d-flex">Acción</div></th>
               </tr>
             </thead>
@@ -35,6 +65,12 @@
               >
                 <td>{{ indice + 1 }}</td>
                 <td>{{ alumno.nombre }}</td>
+                <td>{{ alumno.apellido }}</td>
+                <td>{{ alumno.cedula }}</td>
+                <td>{{ alumno.usuario }}</td>
+                <td>{{ alumno.correo }}</td>
+                <td>{{ alumno.celular }}</td>
+                <td>{{ alumno.anioLectivo }}</td>
                 <td>
                   <div class="contenedor-btn-acciones">
                     <button
