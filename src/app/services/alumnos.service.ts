@@ -19,5 +19,4 @@ export class AlumnosService {
     return this.http.post<nuevoAlumno>(this.URL_API, alumnoDatos);
   }
 
-
 }

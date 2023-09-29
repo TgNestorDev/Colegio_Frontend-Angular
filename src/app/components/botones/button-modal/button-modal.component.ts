@@ -38,10 +38,10 @@ export class ButtonModalComponent implements AfterViewInit {
   constructor(private srvModal: ModalService) {}
 
   seleccionarInput(_tipoForm: string) {
-    // this.elementForm.formulario = _tipoForm;
-    // this.elementForm.title = this.titleModal;
-    // this.srvModal.setFor(this.elementForm);
-    // this.srvModal.openModal();
+    this.elementForm.formulario = _tipoForm;
+    this.elementForm.title = this.titleModal;
+    this.srvModal.setForAlumno(this.elementForm);
+    this.srvModal.openModal();
   }
 
   ngAfterViewInit(): void {

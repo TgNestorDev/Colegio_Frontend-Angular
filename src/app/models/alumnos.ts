@@ -19,4 +19,10 @@ export interface nuevoAlumno {
     usuario:     string;
     contrasenia: string;
     anioLectivo: string;
+}
+
+export interface DataFormAlumno {
+    formulario: string;
+    title: string;
+    data: AlumnoModel;
   }

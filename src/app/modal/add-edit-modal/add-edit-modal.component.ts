@@ -13,7 +13,10 @@ export class AddEditModalComponent implements OnInit {
   titleModal: string = '...';
 
   ngOnInit() {
-    
+    this.srvModal.selectFromAlumno$.subscribe((formulario: any) => {
+      this.tipoFormulario = formulario.formulario;
+      this.titleModal = formulario.title;
+    });
   }
 
   cerrarModal() {

@@ -16,7 +16,9 @@
       <div class="modal-body">
         <container-element [ngSwitch]="tipoFormulario">
           <!-- cuerpo del modal dinámico -->
-          
+          <div *ngSwitchCase="'nuevoAlumno'">
+            <app-crear-alumnos></app-crear-alumnos>
+          </div>
         </container-element>
       </div>
       <div class="modal-footer">
