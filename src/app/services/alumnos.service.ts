@@ -19,4 +19,8 @@ export class AlumnosService {
     return this.http.post<nuevoAlumno>(this.URL_API, alumnoDatos);
   }
 
+  deleteAlumno(id: number) {
+    return this.http.delete<AlumnoModel>(this.URL_API + '/' + id);
+  }
+
 }
