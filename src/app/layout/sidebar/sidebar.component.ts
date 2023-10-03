@@ -14,7 +14,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
     this.menus = [
       {
-        path: '/alumnos',
+        path: 'sistema/alumnos',
         name: 'Alumnos',
         icon: 'group',
       }
