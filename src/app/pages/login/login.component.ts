@@ -32,9 +32,15 @@ export class LoginComponent implements OnInit {
   }
 
   Login(){
-    this.loginService.postLogin(this.myForm.value).subscribe((res) => {
+    this.loginService.postLogin(this.myForm.value).subscribe((res:any) => {
       console.log('se tuvo los datos en login', res);
-      this.router.navigate(['sistema/alumnos']);
+      this.status=res;
+      if(this.status==true){
+        this.router.navigate(['sistema/alumnos']);
+      }else{
+        console.log('No existe el usuario');
+      }
+      
     },
     (error: HttpErrorResponse) => {
         console.log(error.error.info);
