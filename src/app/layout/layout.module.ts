@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { FullLayoutComponent } from './full-layout/full-layout.component';
+import { SimpleLayoutComponent } from './simple-layout/simple-layout.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { FullLayoutComponent } from './full-layout/full-layout.component';
     HeaderComponent,
     SidebarComponent,
     FullLayoutComponent,
+    SimpleLayoutComponent
   ],
   imports: [CommonModule, RouterModule.forChild([])],
   exports: [
@@ -19,6 +21,7 @@ import { FullLayoutComponent } from './full-layout/full-layout.component';
     FooterComponent,
     SidebarComponent,
     FullLayoutComponent,
+    SimpleLayoutComponent
   ],
 })
 export class LayoutModule {}

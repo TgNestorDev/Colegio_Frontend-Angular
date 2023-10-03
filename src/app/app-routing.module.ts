@@ -2,10 +2,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminModule } from './pages/admin/admin.module';
 import { Layouts } from './layout/layout';
+import { LoginModule } from './pages/login/login.module';
 
 const routes: Routes = [
   {
     path: '',
+    data: { layout: Layouts.Simple },
+    children: [
+      { path: '', loadChildren: () => LoginModule },
+      // { path: 'noautorizado', loadChildren: () => NoAutorizadoModule },
+      // { path: 'denegado', loadChildren: () => DeniedModule },
+    ],
+  },
+  {
+    path: 'sistema',
     data: { layout: Layouts.Full },
     children: [{ path: '', loadChildren: () => AdminModule }],
   },

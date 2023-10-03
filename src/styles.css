@@ -1247,3 +1247,7 @@
     border-radius: 10px;
   }
   
+  #Requerido{
+    color: red;
+    font-weight: bold;
+  }
