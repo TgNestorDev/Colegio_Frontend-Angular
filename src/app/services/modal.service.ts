@@ -16,6 +16,7 @@ const initAlumno: DataFormAlumno = {
     cedula:      '',
     correo:      '',
     celular:     '',
+    rol: '',
     usuario:     '',
     contrasenia: '',
     anioLectivo: '',

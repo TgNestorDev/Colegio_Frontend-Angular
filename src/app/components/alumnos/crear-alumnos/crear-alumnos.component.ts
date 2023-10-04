@@ -25,6 +25,7 @@ export class CrearAlumnosComponent implements OnInit {
       cedula: ['', [Validators.required, Validators.maxLength(10)]],
       correo: ['', [Validators.email, Validators.maxLength(50)]],
       celular: ['', [Validators.required, Validators.maxLength(10)]],
+      rol: ['Estudiante'],
       usuario: ['', [Validators.required, Validators.maxLength(50)]],
       contrasenia: ['', [Validators.required, Validators.maxLength(25)]],
       anioLectivo: ['', [Validators.required, Validators.maxLength(50)]]

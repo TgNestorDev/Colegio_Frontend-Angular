@@ -5,6 +5,7 @@ export interface AlumnoModel {
     cedula:      string;
     correo:      string;
     celular:     string;
+    rol:         string;
     usuario:     string;
     contrasenia: string;
     anioLectivo: string;
@@ -16,6 +17,7 @@ export interface nuevoAlumno {
     cedula:      string;
     correo:      string;
     celular:     string;
+    rol:         string;
     usuario:     string;
     contrasenia: string;
     anioLectivo: string;
