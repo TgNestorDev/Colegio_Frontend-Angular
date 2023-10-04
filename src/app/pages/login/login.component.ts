@@ -32,18 +32,12 @@ export class LoginComponent implements OnInit {
   }
 
   Login(){
-    this.loginService.postLogin(this.myForm.value).subscribe((res:any) => {
+    this.loginService.postLogin(this.myForm.value).subscribe((res) => {
       console.log('se tuvo los datos en login', res);
       this.status=res;
       if(this.status==true){
         this.router.navigate(['sistema/alumnos']);
       }else{
-        console.log('No existe el usuario');
-      }
-      
-    },
-    (error: HttpErrorResponse) => {
-        console.log(error.error.info);
         const Toast = Swal.mixin({  //Generar una alerta en la parte superior de la pantalla
           toast: true,
           position: 'top-end',
@@ -58,8 +52,13 @@ export class LoginComponent implements OnInit {
         
         Toast.fire({   //Datos que llevará la alerta en la parte superior de la pantalla
           icon: 'error',
-          title:error.error.info
+          title:'Los datos del usuario son incorrectos'
         })
+      }
+      
+    },
+    (error: HttpErrorResponse) => {
+        console.log(error.error.info);
     }
     );
   }

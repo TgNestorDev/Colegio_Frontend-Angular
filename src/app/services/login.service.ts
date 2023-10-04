@@ -12,7 +12,7 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   postLogin(DatosUsuario: DatosLogin) {
-    return this.http.post<DatosLogin>(this.URL_API, DatosUsuario);
+    return this.http.post<boolean>(this.URL_API, DatosUsuario);
   }
 
 
