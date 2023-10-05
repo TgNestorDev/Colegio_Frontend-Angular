@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import config from 'config/config';
-import { DatosLogin } from '../models/login';
+import { DatosLogin, DatosToken } from '../models/login';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,8 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   postLogin(DatosUsuario: DatosLogin) {
-    return this.http.post<boolean>(this.URL_API, DatosUsuario);
+    return this.http.post<DatosToken>(this.URL_API, DatosUsuario);
+
   }
 
 

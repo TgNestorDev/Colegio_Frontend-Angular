@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DatosToken } from 'src/app/models/login';
 import { LoginService } from 'src/app/services/login.service';
 // import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
@@ -16,6 +17,8 @@ export class LoginComponent implements OnInit {
   myForm!: FormGroup;
 
   status!: boolean;
+
+  respuestaFallida:string='No se encontró usuario';
 
   constructor(
     private fb: FormBuilder,
@@ -32,10 +35,12 @@ export class LoginComponent implements OnInit {
   }
 
   Login(){
-    this.loginService.postLogin(this.myForm.value).subscribe((res) => {
-      console.log('se tuvo los datos en login', res);
-      this.status=res;
-      if(this.status==true){
+    this.loginService.postLogin(this.myForm.value).subscribe((res:DatosToken) => {
+      console.log('se tuvo los datos en login',res);
+      this.status=res.estado;
+      if(this.status){
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('usuario', this.myForm.value.usuario);
         this.router.navigate(['sistema/alumnos']);
       }else{
         const Toast = Swal.mixin({  //Generar una alerta en la parte superior de la pantalla
