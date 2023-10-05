@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminModule } from './pages/admin/admin.module';
 import { Layouts } from './layout/layout';
 import { LoginModule } from './pages/login/login.module';
+import { VerificarTokenGuard } from './Guards/verificar-token.guard';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
   {
     path: 'sistema',
     data: { layout: Layouts.Full },
+    canActivate:[VerificarTokenGuard],
     children: [{ path: '', loadChildren: () => AdminModule }],
   },
   {
