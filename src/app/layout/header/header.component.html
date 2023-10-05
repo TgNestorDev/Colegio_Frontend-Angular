@@ -15,20 +15,9 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Administrador
-          <i id="arrow-created" class="arrow material-icons">arrow_drop_down</i>
+          {{rolUsuario}}
         </button>
-        <ul
-          class="dropdown-menu status_change"
-          aria-labelledby="dropdownMenuButtonRoles"
-          style="min-width: 100%"
-        >
-          <li *ngFor="let item of listaRoles">
-            <a class="dropdown-item" data-class="created" href="#">{{
-              item.rol
-            }}</a>
-          </li>
-        </ul>
+        
       </div>
     </section>
     <section class="d-flex align-items-center justify-content-center">
@@ -42,15 +31,12 @@
           type="button"
           data-bs-toggle="dropdown"
         >
-          nestortigasi085@gmail.com
+          {{nombreUsuarion}}
           <i id="arrowCorreo" class="arrow material-icons">arrow_drop_down</i>
         </button>
         <ul class="dropdown-menu" style="width: 100%">
           <li>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
+            
             <button
               class="dropdown-item"
               (click)="cerrarSeccion()"
@@ -104,21 +90,11 @@
             aria-expanded="false"
             data-bs-offset="0,12"
           >
-            Administrador
+            {{rolUsuario}}
             <i id="arrow-created" class="arrow material-icons"
               >arrow_drop_down</i
             >
           </button>
-          <ul
-            class="dropdown-menu status_change"
-            aria-labelledby="dropdownMenuButton1"
-          >
-            <li *ngFor="let item of listaRoles">
-              <a class="dropdown-item" data-class="created" href="#">{{
-                item.rol
-              }}</a>
-            </li>
-          </ul>
         </div>
       </section>
       <section class="d-flex align-items-center justify-content-center">
@@ -132,14 +108,11 @@
             type="button"
             data-bs-toggle="dropdown"
           >
-            nestortigasi085@gmail.com
+            {{nombreUsuarion}}
             <i id="arrowCorreo" class="arrow material-icons">arrow_drop_down</i>
           </button>
           <ul class="dropdown-menu" style="width: 100%">
             <li>
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
               <div class="dropdown-divider"></div>
               <button class="dropdown-item">Cerrar Session</button>
             </li>

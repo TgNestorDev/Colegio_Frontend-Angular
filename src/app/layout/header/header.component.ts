@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import decode from 'jwt-decode';
 
 @Component({
   selector: 'app-header',
@@ -6,16 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  listaRoles: any = [];
+  rolUsuario!: string;
+  nombreUsuarion!: string;
 
-  constructor() {}
+
+  constructor(
+    private route:Router
+  ) {}
 
   ngOnInit(): void {
-    this.listaRoles = [
-      { id: 1, nombre: 'Administrador' },
-      { id: 2, nombre: 'Usuario' },
-      { id: 3, nombre: 'Invitado' },
-    ];
+    const token = (localStorage.getItem('token') as string);
+    const datos:{sub: any}= decode(token); //El rol del usuario viene en la variable sub
+    this.rolUsuario=datos.sub;
+    this.nombreUsuarion= (localStorage.getItem('usuario') as string);
   }
 
   clickMobileMenu() {
@@ -38,6 +43,8 @@ export class HeaderComponent implements OnInit {
 
   // Cerrar sesión
   cerrarSeccion() {
-    //this.casclient.Logout();
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
+    this.route.navigate(['/']);
   }
 }
